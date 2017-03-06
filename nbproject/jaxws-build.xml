@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-EntDetalleDocumentoService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/EntDetalleDocumentoService"/>
+        <property name="wsdl-EntDetalleDocumentoService" location="xml-resources/web-service-references/EntDetalleDocumentoService/wsdl/lasiewebsit.ccaf.andes_8080/enterprise/EntDetalleDocumentoService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/EntDetalleDocumentoService" destdir="${build.generated.dir}/jax-wsCache/EntDetalleDocumentoService" wsdl="${wsdl-EntDetalleDocumentoService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://lasiewebsit.ccaf.andes:8080/enterprise/EntDetalleDocumentoService?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-EntDetalleDocumentoService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/EntDetalleDocumentoService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/EntDetalleDocumentoService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-EntDetalleDocumentoService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/EntDetalleDocumentoService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/siebel/fins"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-EntDetalleDocumentoService"/>
+</project>
